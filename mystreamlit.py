@@ -11,11 +11,8 @@ st.date_input("Select a date")
 st.title("""Welcome to my Dashboard
 This is my first time using streamlit.""")
 
-# Upload CSV file
-upload_file = st.file_uploader("Please upload your CSV file here:", type='csv')
-
-if upload_file is not None:
-    df = pd.read_csv(upload_file)
+# Load CSV from the same folder (auto-loads on app start)
+df = pd.read_csv("Tips.csv")
 
     # Show data
     st.subheader("Raw Data")
