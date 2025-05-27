@@ -12,12 +12,11 @@ st.title("""Welcome to my Dashboard
 This is my first time using streamlit.""")
 
 #upload data
-upload_file = st.file_uploader("Please upload here:", type = 'csv')
+# Upload CSV file
+upload_file = st.file_uploader("Please upload your CSV file here:", type='csv')
 
-
-df = pd.read_csv(r"C:\Users\Userx\1AA DATA ANALYTIC\Tips.csv")
-df = pd.read_csv("Tips.csv")
-#df = pd.read_csv(upload_file)
+if upload_file is not None:
+    df = pd.read_csv(upload_file)
 
 #show data
 st.subheader("Raw Data")
